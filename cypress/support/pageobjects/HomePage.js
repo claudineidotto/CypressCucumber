@@ -13,6 +13,9 @@ class HomePage {
         cy.visit(url)
     }
  
+    clicarBotaoComecarAutomacao() {
+        cy.get(homeElements.botaoAutomacaoWeb()).click()
+    }
     
     visualizarLink() {
         cy.get(homeElements.link()).should('contain', cy.location('href'))

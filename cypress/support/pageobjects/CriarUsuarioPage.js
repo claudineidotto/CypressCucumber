@@ -7,15 +7,13 @@ const homeElements = new HomeElements
 const criarusuarioElements = new CriarUsuarioElements
 const url = Cypress.config("baseUrl")
 
-class LoginCriarUsuarioPage {
+class CriarUsuarioPage {
     // Acessa o site que será testado
     acessarSite() {
         cy.visit(url)
     }
 
-    clicarBotaoComecarAutomacao() {
-        cy.get(homeElements.botaoAutomacaoWeb()).click()
-    }
+    
 
     clicarBotaoFormulario() {
         cy.get(criarusuarioElements.botaoFormulario()).click()

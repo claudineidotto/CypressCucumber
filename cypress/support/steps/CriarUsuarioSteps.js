@@ -3,30 +3,46 @@
 import CriarUsuarioPage from '../pageobjects/CriarUsuarioPage'
 const criarUsuarioPage = new CriarUsuarioPage
 
-And("informo {} incorreto", (email) => {
-    loginPage.informarEmail(email);
+Given("acesso o site automacaobatista", () => {
+    criarUsuarioPage.acessarSite();
 })
 
-And("informo {} incorreta", (senha) => {
-    loginPage.informarSenha(senha);
+When("acesso a pagina automacaoweb", () => {
+    criarUsuarioPage.clicarBotaoPaginaLogin();
 })
 
-Given("acesso o site CWI", () => {
-    loginPage.acessarSite();
+And("acesso a Formulario", () => {
+    criarUsuarioPage.informarEmail(email);
 })
 
-When("acesso a pagina de login", () => {
-    loginPage.clicarBotaoPaginaLogin();
+And("acesso criarUsuario", () => {
+    criarUsuarioPage.informarSenha(senha);
 })
 
-When("clico no botão de realizar login", () => {
-    loginPage.clicarBotaoRealizarLogin();
+And("preencho {} {} {} ", (nome,sobrenome,email) => {
+    criarUsuarioPage.informarSenha(nome,sobrenome,email);
 })
 
-Then("devo visualizar botao de recuperar senha esquecida", () => {
-    loginPage.visualizarBotaoRecuperarSenha();
+And("aperto botao criar", () => {
+    criarUsuarioPage.informarSenha(senha);
 })
 
-Then("devo visualizar mensagem de erro", () => {
-    loginPage.visualizarErroLogin();
+Then("devo visualizar usuario criado", () => {
+    criarUsuarioPage.visualizarBotaoRecuperarSenha();
+})
+
+And("preencho {} {} ", (nome,sobrenome) => {
+    criarUsuarioPage.informarSenha(nome,sobrenome);
+})
+
+Then("devo visualizar mensagem campo obrigatorio", () => {
+    criarUsuarioPage.visualizarBotaoRecuperarSenha();
+})
+
+And("aperto botao voltar", () => {
+    criarUsuarioPage.informarSenha(senha);
+})
+
+Then("devo visualizar texto inicio", () => {
+    criarUsuarioPage.visualizarErroLogin();
 })
