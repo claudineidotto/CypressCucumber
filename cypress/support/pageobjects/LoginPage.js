@@ -1,4 +1,4 @@
-// <reference types="Cypress" />
+/// <reference types="Cypress" />
 
 import LoginElements from '../elements/LoginElements'
 const loginElements = new LoginElements

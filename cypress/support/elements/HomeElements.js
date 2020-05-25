@@ -1,9 +1,8 @@
 class HomeElements {
-    link  = () => { return '.main-header-login-content .title' }
    
-    mensagem = () => { return '.description' }
+    mensagem = () => { return '.s12 center' }
 
-    botaoAutomacaoWeb = () => { return '[type="submit"]' }
+    botaoAutomacaoWeb = () => { return '.btn waves-light orange' }
 
 }
 

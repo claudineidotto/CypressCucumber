@@ -3,30 +3,22 @@
 import HomePage from '../pageobjects/HomePage'
 const homePage = new HomePage
 
-And("informo {} incorreto", (email) => {
-    loginPage.informarEmail(email);
+Given("acesso o site automacaobatista", () => {
+    homePage.setarlink();
 })
 
-And("informo {} incorreta", (senha) => {
-    loginPage.informarSenha(senha);
+When("acesso a pagina home", () => {
+    homePage.acessarSite();
 })
 
-Given("acesso o site CWI", () => {
-    loginPage.acessarSite();
+Then("devo visualizar link correspondente", () => {
+    homePage.acessarSite();
 })
 
-When("acesso a pagina de login", () => {
-    loginPage.clicarBotaoPaginaLogin();
+When("pagina estiver carregada", () => {
+    homePage.acessarSite();
 })
 
-When("clico no botão de realizar login", () => {
-    loginPage.clicarBotaoRealizarLogin();
-})
-
-Then("devo visualizar botao de recuperar senha esquecida", () => {
-    loginPage.visualizarBotaoRecuperarSenha();
-})
-
-Then("devo visualizar mensagem de erro", () => {
-    loginPage.visualizarErroLogin();
+Then("devo visualizar mensagem home", () => {
+    homePage.visualizarMensagem();
 })

@@ -1,6 +1,6 @@
 /* global Given, Then, When */
 
-import CriarUsuarioPage from '../pageobjects/LoginPage'
+import CriarUsuarioPage from '../pageobjects/CriarUsuarioPage'
 const criarUsuarioPage = new CriarUsuarioPage
 
 And("informo {} incorreto", (email) => {

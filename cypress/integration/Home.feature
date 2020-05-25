@@ -8,8 +8,7 @@ Feature: Acessar Home Page
         When acesso a pagina home
         Then devo visualizar link correspondente
 
-    @testedois
+   @testedois
     Scenario Outline: visualizar acesso a home
-        Given acesso a pagina home
-        When pagina estiver carregada
-        Then devo visualizar mensagem 
+         When pagina estiver carregada
+        Then devo visualizar mensagem home

@@ -34,15 +34,14 @@ class LoginCriarUsuarioPage {
         cy.get(criarusuarioElements.inputSobrenome()).type(sobrenome)
     }
 
-
     visualizarErro() {
-        cy.get(criarusuarioElements.mensagemErro()).should('contain', 'Usuário ou senha inválidos.')
+        cy.get(criarusuarioElements.mensagemErro()).should('contain', '2 errors proibiu que este usuário fosse salvo:')
     }
     visualizarSucesso() {
-        cy.get(criarusuarioElements.mensagemSucesso()).should('contain', 'Usuário ou senha inválidos.')
+        cy.get(criarusuarioElements.mensagemSucesso()).should('contain', 'Usuário Criado com sucesso')
     }
     visualizarVoltar() {
-        cy.get(criarusuarioElements.mensagemTexto()).should('contain', 'Usuário ou senha inválidos.')
+        cy.get(criarusuarioElements.mensagemTexto()).should('contain', 'Bem vindo ao Site de Automação do Batista.')
     }
     
 }

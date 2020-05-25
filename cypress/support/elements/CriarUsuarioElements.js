@@ -1,21 +1,24 @@
 class CriarUsuarioElements {
-    botaoFormulario = () => { return '.main-header-login-content .title' }
+    botaoFormulario = () => { return '.collapsible-header' }
 
-    botaoCriarusuario = () => { return '.forgot' }
+    botaoCriarusuario = () => { return '.<a data-method="get" href="/users/new">Criar Usuários</a>' }
 
-    inputNome = () => { return '#email' }
+    inputNome = () => { return '#user_name' }
 
-    inputSobrenome = () => { return '#email' }
+    inputSobrenome = () => { return '#user_lastname' }
 
-    inputEmail = () => { return '#password' }
+    inputEmail = () => { return '#user_email' }
 
     mensagemSucesso = () => { return '.description' }
 
-    mensagemErro = () => { return '.description' }
+    mensagemErro = () => { return '#error_explanation' }
 
-    botaoVoltar = () => { return '[type="submit"]' }
+    botaoVoltar = () => { return '.btn waves-light red' }
 
-    mensagemTexto = () => { return '.description' }
+    mensagemTexto = () => { return '#notice' }
+    
+    botaoCriar = () => { return '[type="submit"]' }
+
 
 
 }
