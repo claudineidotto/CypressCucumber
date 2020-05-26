@@ -2,47 +2,53 @@
 
 import CriarUsuarioPage from '../pageobjects/CriarUsuarioPage'
 const criarUsuarioPage = new CriarUsuarioPage
+import HomePage from '../pageobjects/HomePage'
+const homePage = new HomePage
+
 
 Given("acesso o site automacaobatista", () => {
     criarUsuarioPage.acessarSite();
 })
 
 When("acesso a pagina automacaoweb", () => {
-    criarUsuarioPage.clicarBotaoPaginaLogin();
+    homePage.clicarBotaoComecarAutomacao();
 })
 
 And("acesso a Formulario", () => {
-    criarUsuarioPage.informarEmail(email);
+    criarUsuarioPage.clicarBotaoFormulario();
 })
 
 And("acesso criarUsuario", () => {
-    criarUsuarioPage.informarSenha(senha);
+    criarUsuarioPage.clicarBotaoCriarUsuarios();
 })
 
 And("preencho {} {} {} ", (nome,sobrenome,email) => {
-    criarUsuarioPage.informarSenha(nome,sobrenome,email);
+    criarUsuarioPage.informarNome(nome);
+    criarUsuarioPage.informarSobrenome(sobrenome);
+    criarUsuarioPage.informarEmail(email);
 })
 
 And("aperto botao criar", () => {
-    criarUsuarioPage.informarSenha(senha);
+    criarUsuarioPage.clicarBotaoCriar();
 })
 
 Then("devo visualizar usuario criado", () => {
-    criarUsuarioPage.visualizarBotaoRecuperarSenha();
+    criarUsuarioPage.visualizarSucesso();
 })
 
 And("preencho {} {} ", (nome,sobrenome) => {
-    criarUsuarioPage.informarSenha(nome,sobrenome);
+    criarUsuarioPage.informarNome(nome);
+    criarUsuarioPage.informarSobrenome(sobrenome);
 })
 
 Then("devo visualizar mensagem campo obrigatorio", () => {
-    criarUsuarioPage.visualizarBotaoRecuperarSenha();
+    criarUsuarioPage.visualizarErro();
 })
 
 And("aperto botao voltar", () => {
-    criarUsuarioPage.informarSenha(senha);
+    criarUsuarioPage.clicarBotaoVoltar();
 })
 
 Then("devo visualizar texto inicio", () => {
-    criarUsuarioPage.visualizarErroLogin();
+    criarUsuarioPage.visualizarVoltar();
 })

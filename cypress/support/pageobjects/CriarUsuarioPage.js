@@ -21,6 +21,12 @@ class CriarUsuarioPage {
     clicarBotaoCriarUsuarios() {
         cy.get(criarusuarioElements.botaoCriarusuario()).click()
     }
+    clicarBotaoCriar() {
+        cy.get(criarusuarioElements.botaoCriar()).click()
+    }
+    clicarBotaoVoltar() {
+        cy.get(criarusuarioElements.botaoVoltar()).click()
+    }
 
     informarNome(nome) {
         cy.get(criarusuarioElements.inputNome()).type(nome)
